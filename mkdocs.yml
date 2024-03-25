@@ -1,0 +1,130 @@
+site_name: Thoughts on AI
+site_author: Stefan Streichsbier
+site_description: >-
+  Thoughts on the *impact of AI* on *cybersecurity*, *entrepreneurship*, and our *daily lives*.
+site_url: https://thoughtson.ai
+copyright: Copyright &copy; 2024 Stefan Streichsbier
+watch:
+  - includes
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+       auto_append:
+        - includes/abbreviations.md
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+nav:
+  - Home:
+    - index.md
+  - Posts:
+    - Posts/index.md
+    - Tags:
+      - tags.md
+plugins:
+  - blog:
+      blog_dir: Posts
+      post_readtime: true
+  - search:
+      pipeline:
+        - stopWordFilter
+        - trimmer
+      lang: en
+  - social
+  - minify:
+      minify_html: true
+  - tags:
+      enabled: true
+      tags: true
+      tags_file: tags.md
+theme:
+  name: material
+  language: en
+  font:
+    text: Roboto
+  icon:
+    logo: material/thought-bubble-outline
+  palette: 
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to system preference
+  features:
+    - content.tooltips
+    - header.autohide
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.tracking
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+extra:
+  # generator: false
+  consent:
+    title: Cookie consent
+    actions:
+      - reject
+      - accept
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the quality and relevance of the content. With your consent, you're helping us to
+      make our content better.
+  analytics:
+    provider: google
+    property: G-RQLFXGTWWD
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve this page by
+            sending a <a href="..." target="_blank" rel="noopener">direct message</a> on X.
+  social:
+    - icon: fontawesome/brands/x-twitter
+      link: https://twitter.com/s_streichsbier
+    - icon: fontawesome/brands/github
+      link: https://github.com/streichsbaer
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/sstreichsbier/
