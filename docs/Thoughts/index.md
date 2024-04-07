@@ -1,4 +1,4 @@
 ---
-title: Posts overview
+title: Thoughts overview
 ---
 <!-- Empty page to avoid any introduction -->
