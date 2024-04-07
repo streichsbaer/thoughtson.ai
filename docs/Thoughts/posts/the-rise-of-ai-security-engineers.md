@@ -7,7 +7,7 @@ date: 2024-04-02
 authors:
   - Stefan
 categories:
-  - AI & Security
+  - AI &amp; Security
 tags:
   - Application Security
   - AI Security Engineering
