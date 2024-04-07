@@ -2,7 +2,7 @@ site_name: Thoughts on AI
 site_author: Stefan Streichsbier
 site_description: >-
   Thoughts on the *impact of AI* on *cybersecurity*, *entrepreneurship*, and our *daily lives*.
-site_url: https://thoughtson.ai
+site_url: https://www.thoughtson.ai
 copyright: Copyright &copy; 2024 Stefan Streichsbier
 watch:
   - includes
