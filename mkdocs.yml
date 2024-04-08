@@ -132,8 +132,7 @@ extra:
           name: This page could be improved
           data: 0
           note: >- 
-            Thanks for your feedback! Help us improve this page by
-            sending a <a href="..." target="_blank" rel="noopener">direct message</a> on X.
+            Thanks for your feedback! Help us improve by sending a <a href="https://twitter.com/messages/compose?recipient_id=624523425" target="_blank" rel="noopener">direct message</a> on X.
   social:
     - icon: simple/x
       link: https://twitter.com/s_streichsbier
