@@ -66,6 +66,7 @@ plugins:
         - tags 
 theme:
   name: material
+  custom_dir: overrides
   language: en
   favicon: assets/images/favicon.png
   font:

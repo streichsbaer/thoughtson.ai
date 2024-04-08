@@ -2,7 +2,8 @@
 title: The Rise of AI Security Engineers
 description: Are AI Security Engineers the paradigm shift we need?
 icon: material/robot-love-outline
-draft: false 
+draft: false
+comments: true
 date: 2024-04-02
 authors:
   - Stefan
