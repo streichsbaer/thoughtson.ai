@@ -137,6 +137,10 @@ AI Security Engineers need to be accessible to everyone who is building software
 
 In the next piece, I will dive into the 6 levels of Application Security Automation and present a roadmap for achieving fully autonomous AI Security Engineers. Understanding these levels and the path forward is essential for anyone looking to stay ahead in the rapidly evolving world of application security at the intersection of AI.
 
+---
+
+If you found this useful let me know in the comments and [follow me on X](https://twitter.com/intent/follow?screen_name=s_streichsbier).
+
 !!! tip "Join the conversation"
 
     What do you think?
