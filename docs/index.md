@@ -40,7 +40,7 @@ I am writing about topics that I care most about, covering these main categories
     - How AI-native companies will disrupt industries
     - Leveraging autonomous agents to scale businesses
 
--   :material-security:{ .lg .middle } __AI & Security__
+-   :material-security:{ .lg .middle } [__AI & Security__](/Thoughts/category/ai-amp-security/)
 
     ---
     - How AI is changing cybersecurity
