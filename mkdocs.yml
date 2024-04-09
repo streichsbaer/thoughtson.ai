@@ -72,7 +72,7 @@ theme:
   font:
     text: Roboto
   icon:
-    annotation: material/comment-quote-outline
+    annotation: material/plus-circle-outline
     logo: material/robot-love-outline
   palette: 
     - media: "(prefers-color-scheme)"
