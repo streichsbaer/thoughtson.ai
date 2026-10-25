@@ -2,7 +2,7 @@ site_name: Thoughts on AI
 site_author: Stefan Streichsbier
 site_description: Exploring the impact of AI on *cybersecurity*, *entrepreneurship*, and our *daily lives*.
 site_url: https://www.thoughtson.ai
-copyright: Copyright &copy; 2024 Stefan Streichsbier
+copyright: Copyright &copy; 2024&ndash;2026 Stefan Streichsbier
 watch:
   - includes
 markdown_extensions:
@@ -37,28 +37,39 @@ markdown_extensions:
 nav:
   - Home:
     - index.md
-  - Thougths:
-    - Thoughts/index.md
+  - Thoughts:
+    - blog/index.md
     - Tags:
       - tags.md
 plugins:
   - blog:
-      blog_dir: Thoughts
+      blog_dir: blog
+      # One stable URL per post: https://www.thoughtson.ai/blog/<slug>/
+      # Every post sets `slug:` in its front matter so title edits never move it.
+      post_url_format: "{slug}"
       post_readtime: true
+      draft_on_serve: true
+      draft_if_future_date: true
+  - redirects:
+      redirect_maps:
+        Thoughts/index.md: blog/index.md
+        Thoughts/2024/04/08/the-rise-of-ai-security-engineers/index.md: blog/posts/the-rise-of-ai-security-engineers.md
+        Thoughts/category/ai-amp-security/index.md: https://www.thoughtson.ai/blog/category/ai-amp-security/
   - search:
       pipeline:
         - stopWordFilter
         - trimmer
       lang: en
-  - social
+  # Cards need the Cairo library; CI sets CARDS=true, local builds skip them unless you do too.
+  - social:
+      enabled: !ENV [CARDS, false]
   - minify:
       minify_html: true
   - tags:
       enabled: true
       tags: true
-      tags_file: tags.md
   - rss:
-      match_path: Thoughts/posts/.* 
+      match_path: blog/posts/.*
       date_from_meta:
         as_creation: date
       categories:
@@ -133,13 +144,13 @@ extra:
           name: This page could be improved
           data: 0
           note: >- 
-            Thanks for your feedback! Help us improve by sending a <a href="https://twitter.com/messages/compose?recipient_id=624523425" target="_blank" rel="noopener">direct message</a> on X.
+            Thanks for your feedback! Help us improve by sending a <a href="https://x.com/messages/compose?recipient_id=624523425" target="_blank" rel="noopener">direct message</a> on X.
   social:
     - icon: simple/x
-      link: https://twitter.com/s_streichsbier
+      link: https://x.com/s_streichsbier
     - icon: simple/github
       link: https://github.com/streichsbaer
-    - icon: simple/linkedin
+    - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/sstreichsbier/
     - icon: simple/rss
       link: https://www.thoughtson.ai/feed_rss_created.xml

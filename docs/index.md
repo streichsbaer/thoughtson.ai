@@ -12,7 +12,7 @@ While these breakthroughs open up new possibilities and efficiencies, they also 
 
 I'm spending significant time learning, understanding, and applying the new concepts and tools enabled by AI technology and the rapidly emerging AI ecosystem. Both for my personal and professional life. This blog helps me document my thoughts and explorations in a structured way, and I hope that it will be useful to others who share my passion.
 
-Connect with me on [Twitter](https://twitter.com/intent/follow?screen_name=s_streichsbier). I would love to hear your thoughts, feedback, and ideas.
+Connect with me on [X](https://x.com/intent/follow?screen_name=s_streichsbier). I would love to hear your thoughts, feedback, and ideas.
 
 Let's ride the exponential together!
 
@@ -40,7 +40,7 @@ I am writing about topics that I care most about, covering these main categories
     - How AI-native companies will disrupt industries
     - Leveraging autonomous agents to scale businesses
 
--   :material-security:{ .lg .middle } [__AI & Security__](/Thoughts/category/ai-amp-security/)
+-   :material-security:{ .lg .middle } [__AI & Security__](blog/category/ai-amp-security/)
 
     ---
     - How AI is changing cybersecurity
