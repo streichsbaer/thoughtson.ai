@@ -4,22 +4,21 @@ VENV := .venv
 BIN := $(VENV)/bin
 COOLDOWN_DAYS ?= 7
 
-.PHONY: help install lock new serve build cards clean
+.PHONY: help install lock new serve build clean
 
 help:
 	@echo "make install          create .venv from the pinned, hashed requirements.txt"
 	@echo "make new SLUG=my-post create docs/blog/posts/<SLUG>.md as a draft"
-	@echo "make serve            preview at http://127.0.0.1:8000 (drafts included)"
-	@echo "make build            strict build into site/, as CI does but without social cards"
-	@echo "make cards            strict build with social cards (needs Cairo: brew install cairo)"
+	@echo "make serve            preview at http://127.0.0.1:8000 (drafts hidden; set draft: false locally to preview one)"
+	@echo "make build            strict build into site/, as CI does"
 	@echo "make lock             re-pin requirements.in, skipping releases newer than $(COOLDOWN_DAYS) days"
 
-$(BIN)/mkdocs: requirements.txt
+$(BIN)/zensical: requirements.txt
 	$(PY) -m venv $(VENV)
 	$(BIN)/pip install --quiet --require-hashes --no-deps -r requirements.txt
 	@touch $@
 
-install: $(BIN)/mkdocs
+install: $(BIN)/zensical
 
 lock:
 	uv pip compile requirements.in --python-version 3.12 --generate-hashes --universal \
@@ -33,13 +32,10 @@ new:
 	@echo "Created docs/blog/posts/$(SLUG).md (draft). URL once published: https://www.thoughtson.ai/blog/$(SLUG)/"
 
 serve: install
-	$(BIN)/mkdocs serve
+	$(BIN)/zensical serve
 
 build: install
-	$(BIN)/mkdocs build --strict
-
-cards: install
-	CARDS=true $(BIN)/mkdocs build --strict
+	$(BIN)/zensical build --strict --clean
 
 clean:
 	rm -rf site .cache

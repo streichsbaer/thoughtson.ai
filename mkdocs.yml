@@ -48,7 +48,6 @@ plugins:
       # Every post sets `slug:` in its front matter so title edits never move it.
       post_url_format: "{slug}"
       post_readtime: true
-      draft_on_serve: true
       draft_if_future_date: true
   - redirects:
       redirect_maps:
@@ -60,9 +59,7 @@ plugins:
         - stopWordFilter
         - trimmer
       lang: en
-  # Cards need the Cairo library; CI sets CARDS=true, local builds skip them unless you do too.
-  - social:
-      enabled: !ENV [CARDS, false]
+  - social
   - minify:
       minify_html: true
   - tags:
