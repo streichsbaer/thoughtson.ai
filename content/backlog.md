@@ -3,7 +3,7 @@
 This is the working list for Thoughts on AI. It lives outside `docs/`, so it is never published.
 
 Publishing order for every piece: Thoughts on AI first (the canonical URL), then an X thread that links to it, then the Cysmiq blog copy with rel=canonical pointing back.
-Nothing is published or posted without Stefan's explicit OK.
+Nothing is published or posted without Stefan's explicit OK. The writing style is in `style.md`.
 
 The theme across every piece: verify that the tools actually work, close the gaps with our own extensions where they fall short, and show the evidence.
 
@@ -155,14 +155,14 @@ Stefan, 2026-10-25: "what good would look like". He'll point to it on X, ask oth
 
 Scope to confirm with Stefan. Likely reading: a reference picture of a well-secured setup, built from articles 1–5 (site, build, deploy, accounts, images, CI). It's written as a standard others can argue with, and readers' feedback feeds back into the series and the free skills.
 
-### Giving back to open source: material
+### Giving back to open source
 
-The cdxgen Gemfile.lock case, 2026-10-25. Details are in the side-session notes, cdxgen-gem-remote.md.
-- We saw a wrong gem remote in 12.9.0. It was already fixed on upstream master (PR #4414), just not backported to the 12.x line that npm ships.
-- The other change we flagged, the dropped gem platform property, was intentional and documented.
-- Stefan filed nothing.
-- Lesson: before reporting, check upstream master, open PRs and discussions. Giving back sometimes means not adding noise.
-- This fits article 3 and the "verify the tools actually work" theme.
+Stefan, 2026-10-25: write about this only when we actually bring something back, for example:
+- security analysis of the tools we use, with fixes;
+- improvements we contribute;
+- working with an author.
+
+Not every small upstream issue.
 
 ### 4. CircleCI and registries (later)
 

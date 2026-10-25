@@ -6,6 +6,12 @@ slug: {{SLUG}}
 description: One sentence for search results and social cards.
 date: {{DATE}}
 draft: true
+# The brief isn't published. See content/style.md.
+brief:
+  goal: 
+  purpose: 
+  reaction: 
+  intent: lab notes
 comments: true
 authors:
   - Stefan
