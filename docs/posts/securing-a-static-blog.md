@@ -1,6 +1,6 @@
 ---
 title: Securing a Blog That Has Nothing to Lose
-# The slug fixes the URL: https://www.thoughtson.ai/blog/securing-a-static-blog/
+# The slug fixes the URL: https://www.thoughtson.ai/posts/securing-a-static-blog/
 # X threads and the Cysmiq blog copy link back to that URL, so never change it after publishing.
 slug: securing-a-static-blog
 description: Restarting this blog meant asking what a static site on GitHub Pages can actually lose, and checking instead of assuming.
@@ -10,13 +10,11 @@ comments: true
 authors:
   - Stefan
 categories:
-  - AI &amp; Security
+  - Security
 tags:
   - Application Security
   - Supply Chain Security
 ---
-
-# Securing a Blog That Has Nothing to Lose
 
 <!-- DRAFT for Stefan. Facts marked VERIFY need a source check before publishing.
      Pending: the review of mkdocs-material itself; this draft now builds with Zensical. -->

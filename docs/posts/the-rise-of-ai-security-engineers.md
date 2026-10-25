@@ -11,16 +11,15 @@ hide:
 authors:
   - Stefan
 categories:
-  - AI &amp; Security
+  - AI
+  - Security
 tags:
   - Application Security
   - AI Security Engineering
   - Autonomous Agents
 ---
 
-# The Rise of AI Security Engineers
-
-![AI Security Engineers Rising Sun](../../assets/images/posts/the-rise-of-ai-security-engineers.png)
+![AI Security Engineers Rising Sun](../assets/images/posts/the-rise-of-ai-security-engineers.png)
 
 A few days ago at a [conference](https://devopsdays.org/events/2024-singapore/welcome/), I asked a room full of engineers three simple questions:
 

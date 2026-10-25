@@ -1,0 +1,9 @@
+{#- One row in a post list: date, then title and description. -#}
+<article class="post-row">
+  <time datetime="{{ post.config.date.created }}">{{ post.config.date.created | date }}</time>
+  <p>
+    <a href="{{ post.url | url }}">{{ post.title }}</a>
+    {%- if post.meta.description %} &mdash; {{ post.meta.description }}{% endif %}
+    {%- if post.config.draft %} <span class="post-draft">draft</span>{% endif %}
+  </p>
+</article>
