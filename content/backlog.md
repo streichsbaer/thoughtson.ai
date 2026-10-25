@@ -150,6 +150,18 @@ Material for the "how we review" posts, generic and with no platform names:
 - a code review can't see settings outside the repo (DNS, Pages, branch protection);
 - a static site should be one published-output review, not one review per URL.
 
+### Zensical 0.0.71 review (2026-10-26). NOT for publication
+
+The findings in Zensical itself are unverified model verdicts and haven't been reported to the maintainers. They need reproducing and private disclosure first, which is Stefan's call. If they hold up, they're a real "giving back" story.
+
+Applied to this site:
+- `make serve` binds 127.0.0.1 only;
+- PR builds never publish;
+- no contributor content;
+- macro and URL include features are off. The snippets extension only auto-appends a local abbreviations file.
+
+Safe to say in general terms: the review found the generator's lower-trust inputs on its own (contributor content, the preview server, build-time fetches). It recorded each finding with the conditions under which it applies to a site, not as an absolute.
+
 ### 6. What good looks like
 
 Stefan, 2026-10-25: "what good would look like". He'll point to it on X, ask other people for feedback, and maybe publish it as an X article too.
