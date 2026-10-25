@@ -27,6 +27,7 @@ The theme across every piece: verify that the tools actually work, close the gap
 | 4 | CircleCI and container registry settings: what to check, and how to cut pipeline time | later, once the platform supports it | — |
 | 5 | Securing the accounts behind your site: GitHub, Cloudflare and Namecheap | collecting facts; this blog is the worked example | — |
 | 6 | What good looks like | idea; also an X article that asks people for feedback | — |
+| 7 | What took us so long | idea, for later | — |
 
 ### 1. Securing a static blog
 
@@ -163,6 +164,15 @@ Stefan, 2026-10-25: write about this only when we actually bring something back,
 - working with an author.
 
 Not every small upstream issue.
+
+### 7. What took us so long (later)
+
+Stefan, 2026-10-25. Almost three years of work, and why the scope kept creeping:
+- a lot was going on at once, and we had to work out what is actually useful;
+- looking only at code is no longer enough, so the product needs much more;
+- but first we had to learn to analyse code very well: efficiently, reliably and repeatably.
+
+The story behind the platform, told honestly. Timing and detail are Stefan's call; check against the never-share list.
 
 ### 4. CircleCI and registries (later)
 
