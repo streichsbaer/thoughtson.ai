@@ -19,7 +19,7 @@ tags:
 # Securing a Blog That Has Nothing to Lose
 
 <!-- DRAFT for Stefan. Facts marked VERIFY need a source check before publishing.
-     The "What our review found" section waits on the application review of this repo and of MkDocs Material. -->
+     Pending: the review of mkdocs-material itself; this draft now builds with Zensical. -->
 
 This blog has been quiet since April 2024. Before writing anything new, I wanted to answer a simple question: what can actually go wrong with a static site on GitHub Pages?
 
@@ -73,7 +73,9 @@ The cooldown matters because most malicious releases are found and pulled within
 
 While pinning, something interesting showed up. Two plugins, `mkdocs-redirects` 1.2.3 and `mkdocs-rss-plugin` 1.18, had started depending on `properdocs`, a fork of MkDocs created in March 2026. That's very likely a legitimate community fork, since MkDocs itself is no longer maintained. But a patch release that adds a new upstream project to your build is exactly the change you want to notice rather than absorb. I stayed on the releases that don't need it, for now.
 
-The bigger picture: Material for MkDocs, the theme this blog uses, has been in maintenance mode since November 2025. Its authors moved on to [Zensical](https://zensical.org/), which reads the same configuration. A pinned build is fine for today; the migration is on the list.
+The bigger picture: Material for MkDocs, the theme this blog used, has been in maintenance mode since November 2025, and MkDocs itself is unmaintained. Its authors moved on to [Zensical](https://zensical.org/), which reads the same configuration and builds the blog, feeds, social cards and redirects itself. So I moved. The build went from 51 pinned packages to 11.
+
+Moving wasn't free of surprises. Zensical applied a setting that I had only meant for local previews, "show drafts while serving", to every build. My first Zensical build would have published an unfinished post. I only caught it because I listed what the build produced instead of trusting that it looked the same. That's the habit to keep: check what your tool actually does, not what it says it does.
 
 ## The deploy
 
@@ -88,14 +90,32 @@ The new workflow:
 
 ## The browser
 
-Two third-party scripts run on these pages: Google Analytics, behind a consent banner, and Giscus for comments. Both are reasonable. Both are also code I don't control running on my domain.
+Two third-party scripts run on these pages: Google Analytics and Giscus for comments. Both are also code I don't control running on my domain.
 
-<!-- TODO Stefan: decide on GA4 (keep, privacy-friendly counter, or nothing) -->
+The cookie banner made it look handled. It wasn't. Google Analytics did wait for consent, but the comments script loaded on every post regardless of what the visitor chose, and so did the theme's Google Fonts and my GitHub avatar. For a site with readers in Europe, loading third-party resources before consent is the classic complaint; German courts have fined sites over Google Fonts alone. <!-- VERIFY: cite the LG München Google Fonts ruling (January 2022) -->
+
+Now nothing from a third party loads before the visitor says yes:
+
+- comments load only after accepting them in the cookie settings, or after clicking "Load comments" on a post;
+- fonts and the avatar are served from the site itself;
+- if you reject analytics, you get a cookieless counter instead. <!-- TODO: once the counter is set up -->
+
+I checked it the boring way: open a post in a fresh browser, and list every request that leaves the site. Before the change there were four hosts. Now there are none until you click.
 
 ## What the AI review found
 
-<!-- TODO: results of the application review of this repository and of mkdocs-material 9.7.7 / mkdocs 1.6.1.
-     Only public-safe, generalised findings: what is at risk, and whether it is real or theoretical. -->
+Then I pointed an AI security review at the repository. With no server to attack, it treated every published URL as an entry point (posts, archives, feeds, the search index, the sitemap) and reviewed the build pipeline behind them.
+
+It confirmed the biggest real risk: the old deploy job ran unpinned actions and unpinned packages while holding a token that could write to the repository. Anyone who could change one of those suppliers could have changed the site. The pinned, least-privilege workflow closes that.
+
+It also found the consent problem above, which I had missed while staring at the cookie banner. And it had smaller notes on the new workflow:
+
+- pull request builds run the pull request's own code, so they stay on `pull_request` with a read-only token, never `pull_request_target`;
+- a deploy shouldn't be cancelled half-way by a newer push;
+- the Pages environment should accept deployments from `main` only;
+- a Content-Security-Policy can limit scripts to the few origins the site actually needs. <!-- TODO: add once the redesign settles which origins remain -->
+
+Just as useful was what the review couldn't see. Domain verification, DNS records, branch protection and Pages settings live outside the repository, so a code review is blind to them. That's why the domain section above came from looking at DNS and GitHub settings directly, and why the next piece is about securing the accounts behind a site.
 
 ## The checklist
 
@@ -108,7 +128,8 @@ If you run a static site on GitHub Pages:
 - [ ] Turn on DNSSEC.
 - [ ] Pin build dependencies with hashes, and wait a few days before taking new releases.
 - [ ] Pin actions to commit SHAs, and give the deploy job only `pages: write` and `id-token: write`.
-- [ ] Know every third-party script on your pages, and why it's there.
+- [ ] Know every third-party script on your pages, and make sure none of them loads before consent.
+- [ ] After any build tool change, list what the build produced. Drafts included.
 
 None of this took long. The point is that "it's just a static site" was true for the data, and not true for the domain, the build or the readers.
 
