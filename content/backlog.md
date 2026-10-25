@@ -25,6 +25,7 @@ The theme across every piece: verify that the tools actually work, close the gap
 | 2 | Hardening the Dockerfiles of security tools, plus a free agent skill | outlined | — |
 | 3 | GitHub Actions: secure the open-source actions you depend on, and give back | idea; the blog repo's own workflow is the first testbed | — |
 | 4 | CircleCI and container registry settings: what to check, and how to cut pipeline time | later, once the platform supports it | — |
+| 5 | Securing the accounts behind your site: GitHub, Cloudflare and Namecheap | collecting facts; this blog is the worked example | — |
 
 ### 1. Securing a static blog
 
@@ -72,6 +73,53 @@ Points:
 - secure the open-source actions in your pipeline: SHA pins, cooldowns, least-privilege tokens, `persist-credentials: false`;
 - contribute fixes upstream;
 - the signals we take from them.
+
+### 5. Securing the accounts behind your site
+
+Stefan, 2026-10-25: "how to configure GitHub securely for pages", "same for Cloudflare and Namecheap ... how to manage DNS". This could become one article or a short series.
+
+Internal only, not for publication until Stefan says so: the platform will later help configure the services a customer uses, and keep them configured, through browser use or supported integrations.
+
+GitHub, as read from this repo's settings on 2026-10-25:
+- Already right:
+  - default workflow token permissions are read-only;
+  - workflows can't approve pull requests;
+  - Dependabot alerts are on;
+  - no secrets, deploy keys or webhooks; one collaborator.
+- To fix:
+  - **Allowed actions:** "all", and SHA pinning not required. Restrict to GitHub-owned plus selected actions, and turn on "require SHA pinning".
+  - **Secret scanning and push protection:** off, though free for public repos. Turn them on.
+  - **Dependabot security updates:** off.
+  - **`main`:** no ruleset or branch protection. Block force pushes and deletion, and require the build check.
+  - **Private vulnerability reporting:** off. Turn it on and add a SECURITY.md.
+  - **`github-pages` environment:** allows deploys from `gh-pages` and `main`. After the switch to the Actions deploy, allow `main` only and delete `gh-pages`.
+- Account level, to cover in the article:
+  - 2FA with passkeys or security keys;
+  - review SSH, signing and GPG keys, tokens and authorized OAuth apps;
+  - verify the Pages domain.
+  - Note: the local `gh` token can't read account keys without extra scopes. That's least privilege working; keep it that way.
+
+Cloudflare:
+- account 2FA or passkeys, and an audit of members;
+- scoped API tokens instead of the global key;
+- DNSSEC and CAA records;
+- notifications for DNS changes, and the audit log;
+- Web Analytics as a cookieless counter (see Analytics below).
+
+Namecheap:
+- account 2FA;
+- registrar lock and auto-renew (the domain expires 2027-11-17);
+- the DNSSEC DS record for Cloudflare's key;
+- domain privacy and account recovery details;
+- remove the stale email-forwarding SPF.
+
+## Analytics (decided 2026-10-25)
+
+Stefan wants as much visitor information as possible, but readers choose:
+- **Accept in the consent banner:** Google Analytics 4.
+- **Reject:** only a cookieless, privacy-friendly counter. The candidate is Cloudflare Web Analytics, since DNS is already on Cloudflare; it needs Stefan's beacon token.
+
+To check: how Zensical handles analytics and consent, before building this on Material.
 
 ### 4. CircleCI and registries (later)
 
