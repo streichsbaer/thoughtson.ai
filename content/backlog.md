@@ -155,6 +155,15 @@ Stefan, 2026-10-25: "what good would look like". He'll point to it on X, ask oth
 
 Scope to confirm with Stefan. Likely reading: a reference picture of a well-secured setup, built from articles 1–5 (site, build, deploy, accounts, images, CI). It's written as a standard others can argue with, and readers' feedback feeds back into the series and the free skills.
 
+### Giving back to open source: material
+
+The cdxgen Gemfile.lock case, 2026-10-25. Details are in the side-session notes, cdxgen-gem-remote.md.
+- We saw a wrong gem remote in 12.9.0. It was already fixed on upstream master (PR #4414), just not backported to the 12.x line that npm ships.
+- The other change we flagged, the dropped gem platform property, was intentional and documented.
+- Stefan filed nothing.
+- Lesson: before reporting, check upstream master, open PRs and discussions. Giving back sometimes means not adding noise.
+- This fits article 3 and the "verify the tools actually work" theme.
+
 ### 4. CircleCI and registries (later)
 
 Wait until the platform supports it. The angle: what to look for, how to optimise it, and how to cut pipeline time.
