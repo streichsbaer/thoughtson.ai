@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # Python build dependencies are refreshed with `make lock`, which applies the same 7-day cooldown.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
