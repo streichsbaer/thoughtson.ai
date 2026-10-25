@@ -1,0 +1,8 @@
+# Direct build dependencies. Regenerate the pinned, hashed requirements.txt with `make lock`.
+mkdocs-material[imaging]
+mkdocs-minify-plugin
+# mkdocs-redirects 1.2.3 and mkdocs-rss-plugin 1.18+ depend on the ProperDocs fork of MkDocs.
+# Stay on the MkDocs-only releases until the blog moves to Zensical or ProperDocs on purpose.
+mkdocs-redirects==1.2.2
+mkdocs-rss-plugin==1.17.9
+pymdown-extensions
