@@ -100,6 +100,15 @@ GitHub, as read from this repo's settings on 2026-10-25:
   - verify the Pages domain.
   - Note: the local `gh` token can't read account keys without extra scopes. That's least privilege working; keep it that way.
 
+Applied 2026-10-25 through the GitHub API, with Stefan's OK. Before → after:
+- allowed actions: all → GitHub-owned only (`patterns_allowed: []`), and SHA pinning required;
+- secret scanning: off → on, and push protection: off → on;
+- Dependabot security updates: off → on;
+- private vulnerability reporting: off → on;
+- ruleset "Protect main" (id 25826999), new: blocks deletion and force pushes on the default branch, with no bypass.
+- Side effect: the old tag-pinned workflow on `main` can't run anymore. Publish by merging the new workflow, then switch the Pages source.
+- Not yet done: drop `gh-pages` from the `github-pages` environment, after the switch; add a SECURITY.md.
+
 Cloudflare:
 - account 2FA or passkeys, and an audit of members;
 - scoped API tokens instead of the global key;
