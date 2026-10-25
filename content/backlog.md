@@ -26,6 +26,7 @@ The theme across every piece: verify that the tools actually work, close the gap
 | 3 | GitHub Actions: secure the open-source actions you depend on, and give back | idea; the blog repo's own workflow is the first testbed | — |
 | 4 | CircleCI and container registry settings: what to check, and how to cut pipeline time | later, once the platform supports it | — |
 | 5 | Securing the accounts behind your site: GitHub, Cloudflare and Namecheap | collecting facts; this blog is the worked example | — |
+| 6 | What good looks like | idea; also an X article that asks people for feedback | — |
 
 ### 1. Securing a static blog
 
@@ -120,6 +121,12 @@ Stefan wants as much visitor information as possible, but readers choose:
 - **Reject:** only a cookieless, privacy-friendly counter. The candidate is Cloudflare Web Analytics, since DNS is already on Cloudflare; it needs Stefan's beacon token.
 
 To check: how Zensical handles analytics and consent, before building this on Material.
+
+### 6. What good looks like
+
+Stefan, 2026-10-25: "what good would look like". He'll point to it on X, ask other people for feedback, and maybe publish it as an X article too.
+
+Scope to confirm with Stefan. Likely reading: a reference picture of a well-secured setup, built from articles 1–5 (site, build, deploy, accounts, images, CI). It's written as a standard others can argue with, and readers' feedback feeds back into the series and the free skills.
 
 ### 4. CircleCI and registries (later)
 
