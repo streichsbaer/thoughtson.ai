@@ -100,7 +100,7 @@ Now nothing from a third party loads before the visitor says yes:
 - fonts and the avatar are served from the site itself;
 - if you reject analytics, you get a cookieless counter instead. <!-- TODO: once the counter is set up -->
 
-I checked it the boring way: open a post in a fresh browser, and list every request that leaves the site. Before the change there were four hosts. Now there are none until you click.
+I checked it the boring way: open a post in a fresh browser, and list every request that leaves the site. Before the change, a fresh visit reached Google and GitHub before I had asked for anything. Now nothing leaves the site until you click.
 
 ## What the AI review found
 

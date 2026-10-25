@@ -131,6 +131,24 @@ Stefan wants as much visitor information as possible, but readers choose:
 
 To check: how Zensical handles analytics and consent, before building this on Material.
 
+### Notes from the AI review of this blog (2026-10-25)
+
+Real, fixed:
+- the old deploy ran unpinned actions and packages with `contents: write`;
+- Giscus, Google Fonts and the GitHub avatar loaded before consent. Fixed in commit e7d7708; verified in a fresh browser with zero third-party requests before a click.
+
+Lower risk:
+- PR builds stay on `pull_request`;
+- deploys are not cancelled (fixed);
+- the Pages environment should accept `main` only, after the switch;
+- add a meta CSP after the redesign;
+- approval for outside contributors' workflow runs: a repo setting, to ask Stefan.
+
+Material for the "how we review" posts, generic and with no platform names:
+- with no server, every published URL became an entry point; about two dozen work items;
+- a code review can't see settings outside the repo (DNS, Pages, branch protection);
+- a static site should be one published-output review, not one review per URL.
+
 ### 6. What good looks like
 
 Stefan, 2026-10-25: "what good would look like". He'll point to it on X, ask other people for feedback, and maybe publish it as an X article too.
