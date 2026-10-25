@@ -77,8 +77,8 @@ theme:
   custom_dir: overrides
   language: en
   favicon: assets/images/favicon.png
-  font:
-    text: Roboto
+  # No Google Fonts: they load before cookie consent. System fonts until the redesign self-hosts its faces.
+  font: false
   icon:
     annotation: material/plus-circle-outline
     logo: material/robot-love-outline
@@ -119,6 +119,10 @@ extra:
   # generator: false
   consent:
     title: Cookie consent
+    # Each third party loads only after the visitor accepts it here; comments can also be loaded per page.
+    cookies:
+      analytics: Google Analytics
+      github: GitHub comments (Giscus)
     actions:
       - reject
       - accept

@@ -12,9 +12,10 @@ on:
 permissions:
   contents: read
 
+# Newer pull request builds replace older ones; a deploy to Pages is never cut off mid-way.
 concurrency:
   group: pages-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
