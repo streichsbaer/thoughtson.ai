@@ -21,15 +21,25 @@ The theme across every piece: verify that the tools actually work, close the gap
 
 | # | Working title | Status | File |
 |---|---|---|---|
-| 1 | Restarting this blog, and securing a static site you think has nothing to lose | drafting; the blog repo is now a standing testbed for the application review (Stefan, 2026-10-25), and the article waits on its results | `docs/blog/posts/securing-a-static-blog.md` |
+| 1 | Securing a blog that has nothing to lose: the move to Zensical, and what a static site can still lose | drafting; split on 2026-10-26 (below) | `docs/posts/securing-a-static-blog.md` |
+| 1a | Securing the build and deploy of a GitHub Pages site (category CI/CD) | draft; waits on the Pages switch at publish time | `docs/posts/securing-a-github-pages-deploy.md` |
+| 1b | Securing DNS for a static site, with Cloudflare and Namecheap (category DNS) | draft, findings only; waits on Stefan's account changes | `docs/posts/securing-dns-for-a-static-site.md` |
 | 2 | Hardening the Dockerfiles of security tools, plus a free agent skill | outlined | — |
 | 3 | GitHub Actions: secure the open-source actions you depend on, and give back | idea; the blog repo's own workflow is the first testbed | — |
 | 4 | CircleCI and container registry settings: what to check, and how to cut pipeline time | later, once the platform supports it | — |
-| 5 | Securing the accounts behind your site: GitHub, Cloudflare and Namecheap | collecting facts; this blog is the worked example | — |
+| 5 | Securing the accounts behind your site | mostly folded into 1a and 1b; what's left is the GitHub account level (2FA, keys, tokens, OAuth apps) | — |
 | 6 | What good looks like | idea; also an X article that asks people for feedback | — |
 | 7 | What took us so long | idea, for later | — |
 
 ### 1. Securing a static blog
+
+Stefan, 2026-10-26: say little about the platform. Post 1 covers the move from MkDocs to Zensical and why, and the attack surface of a static blog. It links to a CI/CD post (build, deploy, GitHub settings) and a DNS post (Cloudflare, maybe other providers). The framing: I'm starting to secure all of this properly and helping other people do the same; a public blog is the easiest part, and the series moves on to increasingly complex systems. The "What the AI review added" section was dropped. The reader/consent fix stays in post 1.
+
+Publish 1, 1a and 1b together, or replace the LINK markers in post 1 with plain text until the others are out. Uncomment their categories in `docs/categories.md` when they publish.
+
+To plan later with Stefan: the series as a whole (what it covers, its name, how posts link to each other), where posts are created, and how the skills repo fits in.
+
+Original notes, 2026-10-25:
 
 The story is migrating this blog: what's at risk on GitHub Pages, and what is safe to share. Stefan expects little risk ("we don't own anything, it's just public information"), and we check whether that holds.
 
