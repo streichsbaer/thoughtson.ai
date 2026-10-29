@@ -1,8 +1,8 @@
 ---
-title: Securing DNS for a Static Site
-# The slug fixes the URL: https://www.thoughtson.ai/posts/securing-dns-for-a-static-site/
+title: Securing DNS with Cloudflare and Namecheap
+# The slug fixes the URL: https://www.thoughtson.ai/posts/securing-dns-with-cloudflare-and-namecheap/
 # Never change it after publishing.
-slug: securing-dns-for-a-static-site
+slug: securing-dns-with-cloudflare-and-namecheap
 description: Lab notes on the domain behind this blog. Domain verification, CAA, DNSSEC and mail records, at Cloudflare and Namecheap.
 date: 2026-10-25
 draft: true
@@ -22,7 +22,7 @@ categories:
 <!-- DRAFT for Stefan. Status: findings only. The fixes need Stefan's Cloudflare, Namecheap and GitHub accounts. -->
 <!-- TODO: after the fixes, add the before → after records and the commands that verify them. -->
 
-This is the domain part of [securing this blog](securing-a-static-blog.md). Whoever controls what `thoughtson.ai` serves can publish under my name.
+This is the domain part of [securing this blog](securing-a-zensical-blog-on-github-pages.md). Whoever controls what `thoughtson.ai` serves can publish under my name.
 
 The setup: the domain is registered at Namecheap, DNS is on Cloudflare, and `www` points at GitHub Pages.
 

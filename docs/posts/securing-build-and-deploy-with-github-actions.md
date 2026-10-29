@@ -1,8 +1,8 @@
 ---
-title: Securing the Build and Deploy of a GitHub Pages Site
-# The slug fixes the URL: https://www.thoughtson.ai/posts/securing-a-github-pages-deploy/
+title: Securing Build and Deploy with GitHub Actions
+# The slug fixes the URL: https://www.thoughtson.ai/posts/securing-build-and-deploy-with-github-actions/
 # Never change it after publishing.
-slug: securing-a-github-pages-deploy
+slug: securing-build-and-deploy-with-github-actions
 description: Lab notes on the build and deploy behind this blog. Pinned packages and actions, least-privilege tokens, and the GitHub settings I changed.
 date: 2026-10-25
 draft: true
@@ -22,7 +22,7 @@ categories:
 <!-- DRAFT for Stefan. Facts marked VERIFY need a source check before publishing. -->
 <!-- TODO before publishing: switch the Pages source to GitHub Actions, enforce HTTPS, limit the github-pages environment to main, delete gh-pages. Then fill in "Pages settings". -->
 
-This is the build and deploy part of [securing this blog](securing-a-static-blog.md). Whatever runs in the pipeline can change every page, so it gets its own notes.
+This is the build and deploy part of [securing this blog](securing-a-zensical-blog-on-github-pages.md). Whatever runs in the pipeline can change every page, so it gets its own notes.
 
 <!-- more -->
 

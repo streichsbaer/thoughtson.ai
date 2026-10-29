@@ -10,6 +10,16 @@ Stefan's direction from 2026-10-25. Read this before drafting or editing any pos
 - Short sections with plain headings. Use lists where the content is a list, and code where the reader would type it.
 - Facts I can show: commands, settings, before and after. Every claim from outside my own work gets a source.
 
+## Titles
+
+Stefan, 2026-10-29: plain titles in the form "Securing <what>", naming the actual tools, so people searching for them find the post. No clever titles.
+
+- Securing a Zensical Blog on GitHub Pages
+- Securing Build and Deploy with GitHub Actions
+- Securing DNS with Cloudflare and Namecheap
+
+The slug is the title in lowercase with dashes.
+
 ## Every post starts with a brief
 
 Fill in the `brief` block in the front matter before writing. It isn't published.

@@ -1,9 +1,9 @@
 ---
-title: Securing a Blog That Has Nothing to Lose
-# The slug fixes the URL: https://www.thoughtson.ai/posts/securing-a-static-blog/
+title: Securing a Zensical Blog on GitHub Pages
+# The slug fixes the URL: https://www.thoughtson.ai/posts/securing-a-zensical-blog-on-github-pages/
 # X threads and the Cysmiq blog copy link back to that URL, so never change it after publishing.
-slug: securing-a-static-blog
-description: Lab notes from restarting this blog. Why I moved it from MkDocs to Zensical, what a static site can still lose, and where I'm starting.
+slug: securing-a-zensical-blog-on-github-pages
+description: "Lab notes from restarting this blog: why I moved it from MkDocs and Material to Zensical, and what a static site on GitHub Pages can still lose."
 date: 2026-10-25
 draft: true
 # The brief isn't published. See content/style.md.
@@ -52,13 +52,13 @@ There's no server, no database and no login. There are still three things someon
 
 The domain is at Namecheap, DNS is on Cloudflare, and `www` points at GitHub Pages. I found an unverified custom domain, no CAA records, DNSSEC off, and a mail setup that lets anyone send convincing mail "from" the domain.
 
-The findings and fixes are in their own post: Securing DNS for a static site. <!-- LINK: /posts/securing-dns-for-a-static-site/ -->
+The findings and fixes are in their own post: Securing DNS with Cloudflare and Namecheap. <!-- LINK: /posts/securing-dns-with-cloudflare-and-namecheap/ -->
 
 ### The build and deploy
 
 The old workflow installed unpinned packages and ran `mkdocs gh-deploy --force` with write access to the whole repository, using actions pinned only by tag.
 
-What I changed, and the repository settings I tightened, are in their own post: Securing the build and deploy of a GitHub Pages site. <!-- LINK: /posts/securing-a-github-pages-deploy/ -->
+What I changed, and the repository settings I tightened, are in their own post: Securing Build and Deploy with GitHub Actions. <!-- LINK: /posts/securing-build-and-deploy-with-github-actions/ -->
 
 ### The readers
 

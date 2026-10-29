@@ -21,9 +21,9 @@ The theme across every piece: verify that the tools actually work, close the gap
 
 | # | Working title | Status | File |
 |---|---|---|---|
-| 1 | Securing a blog that has nothing to lose: the move to Zensical, and what a static site can still lose | drafting; split on 2026-10-26 (below) | `docs/posts/securing-a-static-blog.md` |
-| 1a | Securing the build and deploy of a GitHub Pages site (category CI/CD) | draft; waits on the Pages switch at publish time | `docs/posts/securing-a-github-pages-deploy.md` |
-| 1b | Securing DNS for a static site, with Cloudflare and Namecheap (category DNS) | draft, findings only; waits on Stefan's account changes | `docs/posts/securing-dns-for-a-static-site.md` |
+| 1 | Securing a Zensical Blog on GitHub Pages: the move from MkDocs, and what a static site can still lose | drafting; split on 2026-10-26 (below) | `docs/posts/securing-a-zensical-blog-on-github-pages.md` |
+| 1a | Securing Build and Deploy with GitHub Actions (category CI/CD) | draft; waits on the Pages switch at publish time | `docs/posts/securing-build-and-deploy-with-github-actions.md` |
+| 1b | Securing DNS with Cloudflare and Namecheap (category DNS) | draft, findings only; waits on Stefan's account changes | `docs/posts/securing-dns-with-cloudflare-and-namecheap.md` |
 | 2 | Hardening the Dockerfiles of security tools, plus a free agent skill | outlined | — |
 | 3 | GitHub Actions: secure the open-source actions you depend on, and give back | idea; the blog repo's own workflow is the first testbed | — |
 | 4 | CircleCI and container registry settings: what to check, and how to cut pipeline time | later, once the platform supports it | — |
