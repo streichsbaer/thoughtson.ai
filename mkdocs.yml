@@ -77,24 +77,6 @@ extra_css:
   - assets/stylesheets/site.css
 extra:
   # generator: false
-  consent:
-    title: Cookie consent
-    # Each third party loads only after the visitor accepts it here; comments can also be loaded per page.
-    # Accept and Reject apply to everything and sit side by side; Manage lets visitors choose one by one.
-    cookies:
-      analytics: Google Analytics
-      github: GitHub comments (Giscus)
-    actions:
-      - accept
-      - reject
-      - manage
-    description: >- 
-      We use cookies to recognize your repeated visits and preferences, as well
-      as to measure the quality and relevance of the content. With your consent, you're helping us to
-      make our content better.
-  analytics:
-    provider: google
-    property: G-RQLFXGTWWD
   social:
     - icon: simple/x
       link: https://x.com/s_streichsbier
