@@ -1,0 +1,17 @@
+{#- The home page, category pages and archives: a list of posts, newest first. -#}
+{% extends "main.html" %}
+{% block container %}
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <a id="__skip" tabindex="-1"></a>
+      {% if page.content and "<h1" in page.content %}
+        <header class="md-typeset list-header">{{ page.content }}</header>
+      {% endif %}
+      <div class="post-list">
+        {% for post in posts %}
+          {% include "partials/post.html" %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

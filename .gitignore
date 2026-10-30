@@ -1,3 +1,7 @@
 .cache
 thoughtsonai
 .DS_Store
+.venv/
+site/
+content/
+.preview/

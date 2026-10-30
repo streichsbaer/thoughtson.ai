@@ -1,0 +1,184 @@
+/* Thoughts on AI: one quiet serif column. Light and dark follow the visitor's system setting. */
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/source-serif-4-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/source-serif-4-latin-italic.woff2") format("woff2");
+}
+
+:root {
+  --site-width: 680px;
+  --site-serif: "Source Serif 4", Charter, "Iowan Old Style", Georgia, serif;
+  --site-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --site-rule: #e6e6e6;
+  --site-muted: #6b6b6b;
+
+  --md-default-bg-color: #ffffff;
+  --md-default-fg-color: #1c1c1c;
+  --md-default-fg-color--light: #6b6b6b;
+  --md-default-fg-color--lighter: #a3a3a3;
+  --md-default-fg-color--lightest: #ededed;
+  --md-typeset-color: #1c1c1c;
+  --md-typeset-a-color: #1d4ed8;
+  --md-accent-fg-color: #1e3a8a;
+  --md-primary-fg-color: #1c1c1c;
+  --md-code-bg-color: #f5f5f4;
+  --md-code-fg-color: #1c1c1c;
+  --md-text-font-family: var(--site-serif);
+  --md-code-font-family: var(--site-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --site-rule: #2e2e2e;
+    --site-muted: #a8a29e;
+
+    --md-default-bg-color: #141414;
+    --md-default-fg-color: #e7e5e4;
+    --md-default-fg-color--light: #a8a29e;
+    --md-default-fg-color--lighter: #6b6560;
+    --md-default-fg-color--lightest: #262626;
+    --md-typeset-color: #e7e5e4;
+    --md-typeset-a-color: #8ab4ff;
+    --md-accent-fg-color: #b9d0ff;
+    --md-primary-fg-color: #e7e5e4;
+    --md-code-bg-color: #1f1f1f;
+    --md-code-fg-color: #e7e5e4;
+    --md-code-hl-color: #2b3a55;
+    --md-code-hl-number-color: #f5a97f;
+    --md-code-hl-special-color: #f38ba8;
+    --md-code-hl-function-color: #89b4fa;
+    --md-code-hl-constant-color: #cba6f7;
+    --md-code-hl-keyword-color: #89b4fa;
+    --md-code-hl-string-color: #a6d189;
+    --md-code-hl-name-color: var(--md-code-fg-color);
+    --md-code-hl-operator-color: #a8a29e;
+    --md-code-hl-punctuation-color: #a8a29e;
+    --md-code-hl-comment-color: #8a8580;
+    --md-code-hl-generic-color: #a8a29e;
+    --md-code-hl-variable-color: #e7e5e4;
+  }
+}
+
+body {
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-family: var(--site-serif);
+}
+
+/* One column, no sidebars. */
+.md-main__inner.md-grid,
+.site-header,
+.site-footer {
+  width: 100%;
+  max-width: var(--site-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+.md-main__inner.md-grid { margin-top: 0; }
+.md-content { max-width: none; }
+.md-content__inner { margin: 0; padding: 0 0 48px; }
+.md-content__inner::before { display: none; }
+
+/* Header and footer */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 64px;
+  padding-bottom: 48px;
+  font-size: 17px;
+}
+.site-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+.site-nav { display: flex; gap: 20px; }
+.site-nav a,
+.site-footer a { color: var(--md-typeset-a-color); }
+.site-nav a:hover,
+.site-footer a:hover { color: var(--md-accent-fg-color); }
+.site-footer {
+  padding-top: 20px;
+  padding-bottom: 64px;
+  font-size: 14px;
+  color: var(--site-muted);
+}
+.site-footer > :first-child { margin-right: 2px; }
+.site-footer a { color: var(--site-muted); }
+
+/* Post lists: the home page, categories and archives */
+.list-header h1 { font-size: 26px; font-weight: 600; margin: 0 0 28px; }
+.post-list { display: grid; gap: 26px; }
+.post-row {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 20px;
+  align-items: baseline;
+}
+.post-row time {
+  font-size: 14px;
+  color: var(--site-muted);
+  font-variant-numeric: tabular-nums;
+}
+.post-row p { margin: 0; font-size: 19px; line-height: 1.5; }
+.post-row a { color: var(--md-typeset-a-color); text-decoration: none; }
+.post-row a:hover { color: var(--md-accent-fg-color); text-decoration: underline; }
+.post-draft {
+  font-size: 13px;
+  color: var(--site-muted);
+  border: 1px solid var(--site-rule);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+@media (max-width: 520px) {
+  .post-row { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+
+/* Reading */
+.md-typeset {
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--md-typeset-color);
+}
+.md-typeset h1 {
+  font-size: 38px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--md-default-fg-color);
+  margin: 0 0 8px;
+}
+.md-typeset h2 { font-size: 25px; line-height: 1.3; font-weight: 600; margin: 40px 0 12px; }
+.md-typeset h3 { font-size: 21px; line-height: 1.35; font-weight: 600; margin: 32px 0 8px; }
+.md-typeset p, .md-typeset ul, .md-typeset ol { margin: 0 0 20px; }
+.md-typeset a { color: var(--md-typeset-a-color); }
+.md-typeset a:hover { color: var(--md-accent-fg-color); }
+.md-typeset img { border-radius: 4px; }
+.md-typeset code, .md-typeset pre, .md-typeset kbd { font-family: var(--site-mono); }
+.md-typeset code { font-size: 0.82em; }
+.md-typeset pre > code { font-size: 14px; line-height: 1.6; padding: 16px 18px; border-radius: 6px; }
+.md-typeset .headerlink { display: none; }
+.post-meta { font-size: 15px; color: var(--site-muted); margin: 0 0 32px !important; }
+.post-meta a { color: var(--site-muted) !important; }
+.md-typeset #__comments { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--site-rule); font-size: 21px; }
+
+/* Things the plain layout doesn't use */
+.md-header, .md-tabs, .md-sidebar, .md-top, .md-footer, .md-content__button { display: none !important; }

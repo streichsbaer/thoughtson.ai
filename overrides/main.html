@@ -1,0 +1,30 @@
+{#- A plain, single-column layout: site name, a few links, the content, a footer.
+    No search bar, tabs or sidebars. The cookie dialog still comes from base.html. -#}
+{% extends "base.html" %}
+
+{% block header %}
+  <header class="site-header">
+    <a class="site-name" href="{{ nav.homepage.url | url }}">{{ config.site_name }}</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="{{ nav.homepage.url | url }}">posts</a>
+      <a href="{{ 'categories/' | url }}">categories</a>
+      <a href="{{ 'feed_rss_created.xml' | url }}">rss</a>
+    </nav>
+  </header>
+{% endblock %}
+
+{% block tabs %}{% endblock %}
+
+{% block site_nav %}{% endblock %}
+
+{% block footer %}
+  <footer class="site-footer">
+    <span>&copy; 2024&ndash;2026 Stefan Streichsbier</span>
+    &middot; <a href="https://x.com/s_streichsbier" rel="me noopener">X</a>
+    &middot; <a href="https://github.com/streichsbaer" rel="me noopener">GitHub</a>
+    &middot; <a href="https://www.linkedin.com/in/sstreichsbier/" rel="me noopener">LinkedIn</a>
+    {% if config.extra.consent %}
+      &middot; <a href="#__consent">Cookie settings</a>
+    {% endif %}
+  </footer>
+{% endblock %}

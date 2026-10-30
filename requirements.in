@@ -1,0 +1,3 @@
+# Direct build dependency. Regenerate the pinned, hashed requirements.txt with `make lock`.
+# Zensical builds the blog, RSS, social cards, redirects and minification itself; no MkDocs plugins needed.
+zensical
