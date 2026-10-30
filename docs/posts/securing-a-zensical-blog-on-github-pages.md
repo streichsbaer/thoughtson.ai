@@ -71,9 +71,17 @@ Next: privacy-friendly analytics, and readers decide what they allow.
 
 ### Hosting and headers
 
-A site should tell browsers how to protect its readers: a Content-Security-Policy, HSTS, no framing by other sites. The responses for this site carry none of these headers, and GitHub Pages doesn't let me add them. <!-- VERIFY: GitHub Pages docs, no custom response headers -->
+<!-- TODO before publishing: make this section true. Proxy www through Cloudflare, add the headers, check them with curl, and record before → after. -->
+A site should tell browsers how to protect its readers: a Content-Security-Policy, HSTS, no framing by other sites. GitHub Pages sent none of these headers, and it doesn't let me add any. <!-- VERIFY: GitHub Pages docs, no custom response headers -->
 
-The options are to put Cloudflare in front of the site and add the headers there, or to set a Content-Security-Policy in the page itself, which covers less. I haven't decided yet.
+So I put Cloudflare in front of the site. Its free tier is a good idea for your own projects anyway: it sits between your site and attackers. What I get from it:
+
+- the security headers, added to every response;
+- HTTPS and HSTS settings in one place;
+- protection against floods of traffic, and caching;
+- privacy-friendly analytics without cookies.
+
+One catch: GitHub renews the site's certificate itself, and that can break once Cloudflare sits in front. <!-- TODO: what we did about it, after testing. -->
 
 ## Run it on your site
 
@@ -83,7 +91,6 @@ I turned these checks into an agent skill, so your coding agent can run them on 
 ## Still open
 
 - The domain fixes.
-- The security headers.
 - Analytics with a choice.
 
 If you run a static site, run the skill and tell me what it found, or what I missed, in the comments or on [X](https://x.com/s_streichsbier).
