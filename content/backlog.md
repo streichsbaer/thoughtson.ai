@@ -257,7 +257,7 @@ How it could work:
 
 Round zero, before the public vote (Stefan, 2026-10-30): hand-pick people we want to get in touch with, help them by privately reporting real, verified results on their projects, and follow their journey. Hear what they say about it before going to the bigger projects. Candidates so far:
 - Peter Steinberger, on his open-source projects.
-- "the folks from Arendale": dictated; who this is still needs confirming with Stefan.
+- The Earendil founders (earendil.com), the Austrians behind Pi and Pi Durable, with a cult following. Probably Armin Ronacher and Mario Zechner, whose blogs this site's design follows; confirm before writing their names anywhere. We run Pi Durable ourselves, so securing it means securing a dependency we rely on. Pi Durable shipped 2026-10-01 as experimental, and Earendil asks the community to help harden it.
 
 For each: pick the project with them in mind, report privately with fixes, ask for their feedback on the reports and the process, and write a post only with their OK. Their reaction shapes how series D runs in public.
 
