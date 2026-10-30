@@ -1,0 +1,17 @@
+{#- A single post: title, one meta line, the text, then comments. -#}
+{% extends "main.html" %}
+{% block container %}
+  <div class="md-content" data-md-component="content">
+    <article class="md-content__inner md-typeset post">
+      <a id="__skip" tabindex="-1"></a>
+      <h1>{{ page.title }}</h1>
+      <p class="post-meta">
+        <time datetime="{{ page.config.date.created }}">{{ page.config.date.created | date }}</time>
+        {%- for category in page.categories %} &middot; <a href="{{ category.url | url }}">{{ category.title | lower }}</a>{% endfor %}
+        {%- if page.config.readtime %} &middot; {{ page.config.readtime }} min read{% endif %}
+      </p>
+      {{ page.content }}
+      {% include "partials/comments.html" %}
+    </article>
+  </div>
+{% endblock %}
