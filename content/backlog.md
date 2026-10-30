@@ -26,7 +26,7 @@ Stefan, 2026-10-30: prefer posts that turn into agent skills in the public `stre
 | 1 | Securing a Zensical Blog on GitHub Pages: the move from MkDocs, and what a static site can still lose | drafting; split on 2026-10-26 (below) | `docs/posts/securing-a-zensical-blog-on-github-pages.md` |
 | 1a | Securing Build and Deploy with GitHub Actions (category CI/CD) | draft; waits on the Pages switch at publish time | `docs/posts/securing-build-and-deploy-with-github-actions.md` |
 | 1b | Securing DNS with Cloudflare and Namecheap | parked 2026-10-30: too dry as a post for now; maybe a light skill later. The fixes still get done on the site | `content/parked/securing-dns-with-cloudflare-and-namecheap.md` |
-| 2 | Hardening the Dockerfiles of security tools, plus a free agent skill | outlined | — |
+| 2 | Hardening the Dockerfiles of security tools, plus a free agent skill | outlined; later. Stefan, 2026-10-30: generic, worked on one of the public repos | — |
 | 3 | GitHub Actions: secure the open-source actions you depend on, and give back | idea; the blog repo's own workflow is the first testbed | — |
 | 4 | CircleCI and container registry settings: what to check, and how to cut pipeline time | later, once the platform supports it | — |
 | 5 | Securing the accounts behind your site | mostly folded into 1a and 1b; what's left is the GitHub account level (2FA, keys, tokens, OAuth apps) | — |
