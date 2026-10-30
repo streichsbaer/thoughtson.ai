@@ -228,6 +228,18 @@ What we store and what we don't, and how we keep the platform safe and scalable.
 - Publish principles and choices, not architecture details that would help an attacker.
 - Stefan approves the scope of each piece.
 
+### C. Securing the vulnerable training apps
+
+Stefan, 2026-10-30: take known, deliberately vulnerable repositories used for security training, fork them and fix them. Maybe host the fixed versions too, because we can show they're safe now and keep monitoring them. Readers can watch live as new attack vectors get covered.
+
+- Candidates to choose from: OWASP Juice Shop, DVWA, WebGoat, NodeGoat, vulpy, crAPI, VAmPI, DVGA, RailsGoat. Pick a few across languages; some may already be our testbeds.
+- Each one fits the series pattern: "Securing <app>". The fork shows every fix as its own commit, linked to the vulnerability it closes.
+- Keep the licences: Juice Shop is MIT; DVWA and WebGoat are GPL, so the forks stay GPL and credit the originals.
+- Name the forks clearly as secured versions, so nobody mistakes them for the training apps, and tell the original authors. That is also the "giving back" angle.
+- Hosting adds a real system to secure: the app, its runtime, its domain. That's the next step up in complexity after the blog, and its own posts.
+- Wording: "fixed and continuously monitored", not "guaranteed safe". Invite people to try to break them, with a disclosure route.
+- Open questions for Stefan: which apps first; whether to host, and where; whether the live coverage view is a page on the blog or something else.
+
 ## X threads and short posts
 
 Each is a thread first; the strongest become articles. Generic wording only, with no model or internal names.
