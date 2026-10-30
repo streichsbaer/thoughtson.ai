@@ -1,9 +1,10 @@
 {#- A plain, single-column layout: site name, a few links, the content, a footer.
-    No search bar, tabs or sidebars. The cookie dialog still comes from base.html. -#}
+    No search bar, tabs or sidebars. -#}
 {% extends "base.html" %}
 
 {% block header %}
-  <header class="site-header">
+  {#- data-md-component: the theme's script expects a header and stops loading without one. -#}
+  <header class="site-header" data-md-component="header">
     <a class="site-name" href="{{ nav.homepage.url | url }}">{{ config.site_name }}</a>
     <nav class="site-nav" aria-label="Main">
       <a href="{{ nav.homepage.url | url }}">posts</a>
