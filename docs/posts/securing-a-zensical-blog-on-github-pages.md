@@ -8,7 +8,7 @@ date: 2026-10-25
 draft: true
 # The brief isn't published. See content/style.md.
 brief:
-  goal: Explain the move to Zensical, map what a static blog can still lose, and point to the DNS and CI/CD posts that fix each part.
+  goal: Explain the move to Zensical, map what a static blog can still lose, and hand readers a skill that runs the same checks on their site.
   purpose: Restart the blog in public and start a series that secures increasingly complex systems, beginning with the easiest one.
   reaction: Readers check their own static site against the attack surface, follow the series, and tell me what I missed.
   intent: lab notes
@@ -52,7 +52,12 @@ There's no server, no database and no login. There are still three things someon
 
 The domain is at Namecheap, DNS is on Cloudflare, and `www` points at GitHub Pages. I found an unverified custom domain, no CAA records, DNSSEC off, and a mail setup that lets anyone send convincing mail "from" the domain.
 
-The findings and fixes are in their own post: Securing DNS with Cloudflare and Namecheap. <!-- LINK: /posts/securing-dns-with-cloudflare-and-namecheap/ -->
+The fixes are standard settings at those three services:
+
+- verify the custom domain on my GitHub account;
+- add CAA records for the certificate authorities that issue for the site;
+- turn on DNSSEC;
+- since the domain sends no mail, publish `v=spf1 -all` and DMARC `p=reject`.
 
 ### The build and deploy
 
@@ -78,8 +83,13 @@ How I checked: I opened a post in a fresh browser and listed every request that 
 - The DNS and domain fixes.
 - A Content-Security-Policy, now that the site loads almost nothing from elsewhere.
 
+## Run it on your site
+
+<!-- SKILL: link the static-site skill in streichsbaer/agent-skills once it exists. -->
+I turned these checks into an agent skill, so your coding agent can run them on your site and suggest the fixes.
+
 ## What's next
 
-This was the easy one. Next I'll go through the DNS and the deploy in detail, then move on to systems with more to lose.
+This was the easy one. Next I'll go through the build and deploy in detail, then move on to systems with more to lose.
 
 If you run a static site, check it against the three parts above. If you find something I missed, tell me in the comments or on [X](https://x.com/s_streichsbier).

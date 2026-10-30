@@ -39,4 +39,6 @@ If the draft doesn't serve the brief, cut it.
 
 ## Later
 
-The free skills library gets linked from posts once it exists.
+## Posts and skills
+
+Stefan, 2026-10-30: prefer topics that turn into an agent skill in the public `streichsbaer/agent-skills` repository. Each such post ends with a "Run it on your …" section that links its skill, so readers get something they can use for light security improvements on whatever they work on. A topic that makes a dry post but a useful check can be a skill without a post.

@@ -90,3 +90,8 @@ For a static site on GitHub Pages:
 - [ ] Protect the default branch against force pushes and deletion.
 - [ ] Deploy with the Pages action, enforce HTTPS, and limit the environment to your default branch.
 - [ ] After changing your build tool, list what the build produced. Drafts included.
+
+## Run it on your repository
+
+<!-- SKILL: link the GitHub Actions skill in streichsbaer/agent-skills once it exists. -->
+I turned this checklist into an agent skill. Point your coding agent at your repository, and it checks the workflows and settings and proposes the changes.

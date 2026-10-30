@@ -19,17 +19,31 @@ The theme across every piece: verify that the tools actually work, close the gap
 
 ## Articles, in order
 
+Stefan, 2026-10-30: prefer posts that turn into agent skills in the public `streichsbaer/agent-skills` repo. Each post links its skill, so readers can point their agent at their own project for light security improvements. See "Skills" below.
+
 | # | Working title | Status | File |
 |---|---|---|---|
 | 1 | Securing a Zensical Blog on GitHub Pages: the move from MkDocs, and what a static site can still lose | drafting; split on 2026-10-26 (below) | `docs/posts/securing-a-zensical-blog-on-github-pages.md` |
 | 1a | Securing Build and Deploy with GitHub Actions (category CI/CD) | draft; waits on the Pages switch at publish time | `docs/posts/securing-build-and-deploy-with-github-actions.md` |
-| 1b | Securing DNS with Cloudflare and Namecheap (category DNS) | draft, findings only; waits on Stefan's account changes | `docs/posts/securing-dns-with-cloudflare-and-namecheap.md` |
+| 1b | Securing DNS with Cloudflare and Namecheap | parked 2026-10-30: too dry as a post for now; maybe a light skill later. The fixes still get done on the site | `content/parked/securing-dns-with-cloudflare-and-namecheap.md` |
 | 2 | Hardening the Dockerfiles of security tools, plus a free agent skill | outlined | — |
 | 3 | GitHub Actions: secure the open-source actions you depend on, and give back | idea; the blog repo's own workflow is the first testbed | — |
 | 4 | CircleCI and container registry settings: what to check, and how to cut pipeline time | later, once the platform supports it | — |
 | 5 | Securing the accounts behind your site | mostly folded into 1a and 1b; what's left is the GitHub account level (2FA, keys, tokens, OAuth apps) | — |
 | 6 | What good looks like | idea; also an X article that asks people for feedback | — |
 | 7 | What took us so long | idea, for later | — |
+
+## Skills
+
+The free library in `streichsbaer/agent-skills` (to be created with Stefan's OK). One skill per post, grouped as light security improvements people can run on whatever they work on. Generic and self-contained: no Cysmiq internals, prompts or code.
+
+| Skill (working name) | Post | What it does |
+|---|---|---|
+| `static-site-security` | 1, Securing a Zensical Blog on GitHub Pages | Lists what a static site loads before consent, checks build pinning and that drafts stay out of the build, and reads the domain's records (CAA, DNSSEC, SPF/DMARC, Pages verification). Suggests fixes; changes nothing on its own. |
+| `github-actions-hardening` | 1a, Securing Build and Deploy with GitHub Actions | SHA-pins actions, sets least-privilege permissions, `persist-credentials: false`, flags `pull_request_target` and unpinned installs, adds a Dependabot cooldown, and reads the repository settings with `gh`, proposing changes. |
+| `dockerfile-hardening` | 2, Dockerfile hardening | Digest pins, locked dependency trees with a cooldown, minimal final stage, signature checks. |
+
+The DNS checks live inside `static-site-security` for now, so the parked DNS post still gives something away.
 
 ### 1. Securing a static blog
 

@@ -1,3 +1,4 @@
+<!-- PARKED 2026-10-30: Stefan finds a DNS post too dry for now. The fixes still get done on the site; this may come back as a light skill rather than a post. Not built: it lives outside docs/. -->
 ---
 title: Securing DNS with Cloudflare and Namecheap
 # The slug fixes the URL: https://www.thoughtson.ai/posts/securing-dns-with-cloudflare-and-namecheap/
