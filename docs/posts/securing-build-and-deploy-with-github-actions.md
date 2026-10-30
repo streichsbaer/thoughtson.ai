@@ -29,6 +29,7 @@ This is the build and deploy part of [securing this blog](securing-a-zensical-bl
 ## What I found
 
 - The build installed five packages with no versions, on every push.
+- When I pinned them, two plugins had quietly started depending on `properdocs`, a fork of MkDocs. Probably legitimate, but a patch release shouldn't add a new upstream to my build without me noticing.
 - The deploy ran `mkdocs gh-deploy --force` with write access to the whole repository.
 - Actions were pinned only by tag. A tag can be moved to point at different code.
 - The repository allowed any action, had no protection on `main`, and had secret scanning off.
