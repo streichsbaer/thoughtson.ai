@@ -49,7 +49,7 @@ The DNS checks live inside `static-site-security` for now, so the parked DNS pos
 
 Stefan, 2026-10-26: say little about the platform. Post 1 covers the move from MkDocs to Zensical and why, and the attack surface of a static blog. It links to a CI/CD post (build, deploy, GitHub settings) and a DNS post (Cloudflare, maybe other providers). The framing: I'm starting to secure all of this properly and helping other people do the same; a public blog is the easiest part, and the series moves on to increasingly complex systems. The "What the AI review added" section was dropped. The reader/consent fix stays in post 1.
 
-Publish 1, 1a and 1b together, or replace the LINK markers in post 1 with plain text until the others are out. Uncomment their categories in `docs/categories.md` when they publish.
+Publish 1, 1a and 1b together, or replace the LINK markers in post 1 with plain text until the others are out. When a post with a new category publishes, add the category to `docs/categories.md` in alphabetical order (CI/CD: `- [CI/CD](category/cicd/)`). Keep notes out of `docs/`: HTML comments there are published in the page source.
 
 To plan later with Stefan: the series as a whole (what it covers, its name, how posts link to each other), where posts are created, and how the skills repo fits in.
 

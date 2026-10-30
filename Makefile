@@ -36,6 +36,7 @@ serve: install
 
 build: install
 	$(BIN)/zensical build --strict --clean
+	! grep -rlE '<!-- *(TODO|VERIFY|LINK|SKILL|DRAFT)' site
 
 clean:
 	rm -rf site .cache
