@@ -230,6 +230,8 @@ What we store and what we don't, and how we keep the platform safe and scalable.
 
 ### C. Securing the vulnerable training apps
 
+Could be the first round of series D below.
+
 Stefan, 2026-10-30: take known, deliberately vulnerable repositories used for security training, fork them and fix them. Maybe host the fixed versions too, because we can show they're safe now and keep monitoring them. Readers can watch live as new attack vectors get covered.
 
 - Candidates to choose from: OWASP Juice Shop, DVWA, WebGoat, NodeGoat, vulpy, crAPI, VAmPI, DVGA, RailsGoat. Pick a few across languages; some may already be our testbeds.
@@ -239,6 +241,24 @@ Stefan, 2026-10-30: take known, deliberately vulnerable repositories used for se
 - Hosting adds a real system to secure: the app, its runtime, its domain. That's the next step up in complexity after the blog, and its own posts.
 - Wording: "fixed and continuously monitored", not "guaranteed safe". Invite people to try to break them, with a disclosure route.
 - Open questions for Stefan: which apps first; whether to host, and where; whether the live coverage view is a page on the blog or something else.
+
+### D. Securing open source, chosen with the readers
+
+Stefan, 2026-10-30: build a following that comes along and helps decide what we look at. "Which one should we secure next?" Readers suggest and vote; open-source maintainers can ask for a review. We take open-source repositories and get them secured. People can donate to support it, and help us reach maintainers. Series C (the training apps) can be the first round.
+
+How it could work:
+- **Suggestions and votes in public:** GitHub Discussions on a public repo, plus X polls. Weigh votes with how widely the project is used and how few maintainers it has; the OpenSSF Criticality Score is one public input.
+- **Maintainer requests:** an issue form in the same repo. Maintainers who ask come first, since they've opted in.
+- **Findings stay private until fixed:** report through the project's security policy or GitHub private vulnerability reporting, offer a fix, and publish only after the fix ships or an agreed deadline. Votes are public; findings aren't.
+- **Fixes, not report dumps:** maintainers are flooded with low-quality AI-generated reports (curl publicly pushed back on them). Every report we send is verified and comes with a patch or pull request. That's the difference to show.
+- **Each project gets a post:** "Securing <project>", written with the maintainer's OK, crediting them.
+- **Donations:** GitHub Sponsors or Open Collective. Say what the money pays for and report on it. Possibly pass part on to the maintainers.
+- **Help reaching maintainers:** readers who know a maintainer can introduce us.
+
+Open questions for Stefan:
+- Personal (streichsbaer) or Cysmiq? It decides where the repo lives, who receives donations, and how much of the platform shows.
+- Donations to us, to the maintainers, or both?
+- How many projects at a time, and how the vote is run.
 
 ## X threads and short posts
 
