@@ -255,6 +255,12 @@ How it could work:
 - **Donations:** GitHub Sponsors or Open Collective. Say what the money pays for and report on it. Possibly pass part on to the maintainers.
 - **Help reaching maintainers:** readers who know a maintainer can introduce us.
 
+Round zero, before the public vote (Stefan, 2026-10-30): hand-pick people we want to get in touch with, help them by privately reporting real, verified results on their projects, and follow their journey. Hear what they say about it before going to the bigger projects. Candidates so far:
+- Peter Steinberger, on his open-source projects.
+- "the folks from Arendale": dictated; who this is still needs confirming with Stefan.
+
+For each: pick the project with them in mind, report privately with fixes, ask for their feedback on the reports and the process, and write a post only with their OK. Their reaction shapes how series D runs in public.
+
 Open questions for Stefan:
 - Personal (streichsbaer) or Cysmiq? It decides where the repo lives, who receives donations, and how much of the platform shows.
 - Donations to us, to the maintainers, or both?
