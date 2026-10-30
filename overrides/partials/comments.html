@@ -1,7 +1,6 @@
 {% if page.meta.comments %}
   <h2 id="__comments">Comments</h2>
-  <!-- Giscus is a third party: it loads only after the visitor accepts GitHub comments in the
-       cookie settings, or clicks the button below for this page. -->
+  <!-- Giscus is a third party: it loads only when the visitor clicks the button below. -->
   <div id="__comments-gate">
     <p>Comments are hosted on GitHub through Giscus. Loading them shares your visit with GitHub.</p>
     <button type="button" class="md-button" id="__comments-load">Load comments</button>
@@ -31,12 +30,7 @@
       s.async = true
       document.getElementById("__comments-frame").appendChild(s)
     }
-    var __consent = __md_get("__consent")
-    if (__consent && __consent.github) {
-      __loadGiscus()
-    } else {
-      document.getElementById("__comments-load").addEventListener("click", __loadGiscus)
-    }
+    document.getElementById("__comments-load").addEventListener("click", __loadGiscus)
   </script>
 
 {% endif %}
